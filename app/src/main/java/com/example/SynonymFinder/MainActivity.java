@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         findViewById(R.id.Begin).setVisibility(View.VISIBLE);
-        EditText edit = findViewById(R.id.wordInput);
+        final EditText edit = findViewById(R.id.wordInput);
         final String word = edit.getText().toString();
         Button enter = findViewById(R.id.enter);
         final TextView synonym = findViewById(R.id.output);
@@ -43,10 +43,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 synonym.setVisibility(View.VISIBLE);
-                synonym.setText(getSynonym(word));
+                synonym.setText(edit.getText());
+                //synonym.setText(getSynonym(word));
             }
         });
     }
+    /**
     public String getSynonym(String word) {
         String use = word.trim().toLowerCase();
         String startURL = "https://dictionaryapi.com/api/v3/references/thesaurus/json/";
@@ -72,8 +74,10 @@ public class MainActivity extends AppCompatActivity {
         URL url = new URL(urlString);
         urlConnection = (HttpURLConnection) url.openConnection();
         urlConnection.setRequestMethod("GET");
-        urlConnection.setReadTimeout(10000 /* milliseconds */ );
-        urlConnection.setConnectTimeout(15000 /* milliseconds */ );
+     */
+        //urlConnection.setReadTimeout(10000 /* milliseconds */ );
+        //urlConnection.setConnectTimeout(15000 /* milliseconds */ );
+    /**
         urlConnection.setDoOutput(true);
         urlConnection.connect();
         BufferedReader br = new BufferedReader(new InputStreamReader(url.openStream()));
@@ -87,5 +91,7 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("JSON: " + jsonString);
         return new JSONArray(jsonString);
     }
+     */
+
 
 }
