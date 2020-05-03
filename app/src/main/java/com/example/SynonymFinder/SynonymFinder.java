@@ -41,5 +41,12 @@ public class SynonymFinder {
     public SynonymFinder(String setWord) {
         word = setWord;
     }
+    public String getSynonym() {
+        //String use = word.trim().toLowerCase();
+        String startURL = "https://dictionaryapi.com/api/v3/references/thesaurus/json/";
+        String key = "?key=48be692f-801c-4dd7-8f0b-f65e90717d89";
+        String url = startURL + use + key;
+        return url;
+    }
 
 }

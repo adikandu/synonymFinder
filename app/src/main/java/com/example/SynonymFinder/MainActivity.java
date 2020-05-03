@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
                 synonym.setVisibility(View.VISIBLE);
                 synonym.setText(edit.getText());
                 SynonymFinder synonymFinder = new SynonymFinder(edit.getText().toString());
+                String url = synonymFinder.getSynonym();
+                synonym.setText(url);
             }
         });
     }
