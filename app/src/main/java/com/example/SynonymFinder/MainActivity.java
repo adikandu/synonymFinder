@@ -6,10 +6,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import com.example.SynonymFinder.FindSynonym;
 
 
 public class MainActivity extends AppCompatActivity {
-    //RequestQueue queue = Volley.newRequestQueue(this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 synonym.setVisibility(View.VISIBLE);
                 synonym.setText(edit.getText());
-                SynonymFinder synonymFinder = new SynonymFinder(edit.getText().toString());
-                String url = synonymFinder.getSynonym();
+                FindSynonym findSynonym = new FindSynonym(edit.getText().toString());
+                String url = findSynonym.getSynonym();
                 synonym.setText(url);
             }
         });
