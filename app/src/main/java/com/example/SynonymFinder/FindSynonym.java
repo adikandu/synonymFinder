@@ -1,6 +1,6 @@
 package com.example.SynonymFinder;
 
-public class FindSynonym {
+class FindSynonym {
     /**
      * A string to find a synonym for.
      */
@@ -10,14 +10,13 @@ public class FindSynonym {
      * Initializes word to the user's input.
      * @param setWord - The user's input.
      */
-    public FindSynonym(String setWord) {
+    FindSynonym(String setWord) {
         word = setWord;
     }
-    public String getSynonym() {
+    String getUrl() {
         String use = word.trim().toLowerCase();
         String startURL = "https://dictionaryapi.com/api/v3/references/thesaurus/json/";
         String key = "?key=48be692f-801c-4dd7-8f0b-f65e90717d89";
-        String url = startURL + use + key;
-        return url;
+        return startURL + use + key;
     }
 }
